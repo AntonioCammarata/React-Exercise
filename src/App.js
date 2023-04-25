@@ -3,15 +3,12 @@ import { Call } from "./call";
 import { Sum } from "./sum";
 import { Welcome } from "./welcome";
 import { WelcomeAge } from "./welcome-2.";
+import { Age } from "./Props-Extract message";
 
 function App() {
   return (
     <>
-      <Hello />
-      <Call name=" antonio" />
-      <Sum number1={2} number2={5} />
-      <Welcome name={<i> John</i>} />
-      <WelcomeAge name="Luca" age={22} />
+      <WelcomeAge name=" luca" age={28} />
     </>
   );
 }
