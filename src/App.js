@@ -4,11 +4,12 @@ import { Sum } from "./sum";
 import { Welcome } from "./welcome";
 import { WelcomeAge } from "./welcome-2.";
 import { Age } from "./Props-Extract message";
+import ConditionalRendering from "./ConditionalRendering";
 
 function App() {
   return (
     <>
-      <WelcomeAge name=" luca" age={28} />
+      <ConditionalRendering name="luca" age={22} />
     </>
   );
 }
