@@ -14,7 +14,7 @@ import { CounterProps } from "./CounterProps";
 function App() {
   return (
     <>
-      <CounterProps initialValue={1} incrementBy={2} />
+      <Counter />
     </>
   );
 }
