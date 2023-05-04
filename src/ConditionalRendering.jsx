@@ -1,5 +1,5 @@
 import React from "react";
-import { Age } from "./Props-Extract message";
+import { Age } from "./age";
 
 function ConditionalRendering({props}) {
   return (

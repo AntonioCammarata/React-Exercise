@@ -1,4 +1,4 @@
-import { Age } from "./Props-Extract message";
+import { Age } from "./age";
 
 function ConditionalRenderingIf( {props} ) {
   return (
