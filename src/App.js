@@ -11,12 +11,14 @@ import { Young } from "./Conditional Rendering - Render the You are very young";
 import { Counter1 } from "./Counter";
 import { CounterProps } from "./CounterProps";
 import { CounterProps1 } from "./CounterEsercizio2";
+import CounterClick from "./CounterButton";
 
 function App() {
   return (
     <>
       <Welcome name={<strong>"Antonio"</strong>} />
       <CounterProps1 initialValue={1} incrementBy={2} />
+      <CounterClick />
     </>
   );
 }
