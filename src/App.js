@@ -12,13 +12,13 @@ import { Counter1 } from "./Counter";
 import { CounterProps } from "./CounterProps";
 import { CounterProps1 } from "./CounterEsercizio2";
 import CounterClick from "./CounterButton";
+import ClickTracker from "./ClickTraker";
+import InteractiveWelcome from "./FormInteractive";
 
 function App() {
   return (
     <>
-      <Welcome name={<strong>"Antonio"</strong>} />
-      <CounterProps1 initialValue={1} incrementBy={2} />
-      <CounterClick />
+      <InteractiveWelcome />
     </>
   );
 }
