@@ -14,7 +14,7 @@ import { CounterProps } from "./CounterProps";
 function App() {
   return (
     <>
-      <Counter />
+      <Welcome name={<strong>"Antonio"</strong>} />
     </>
   );
 }
