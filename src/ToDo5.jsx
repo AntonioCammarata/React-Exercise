@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TodoList4() {
+function Todo5() {
   const [items, setItems] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
@@ -15,16 +15,17 @@ function TodoList4() {
     setInputValue("");
   };
 
-  const handleReset = (event) => {
-    event.preventDefault();
+  const handleReset = () => {
     setItems([]);
     setInputValue("");
   };
-  const handleRemove = (event) => {
+
+  const handleRemove = (id) => {
     const removeItems = [...items];
-    removeItems.splice(event, 1);
+    removeItems.splice(id, 1);
     setItems(removeItems);
   };
+
   return (
     <div>
       <form onSubmit={handleAddItem}>
@@ -35,22 +36,27 @@ function TodoList4() {
           name="itemInput"
         />
         <button type="submit">Add</button>
-        <button type="click" onClick={handleReset}>
-          Reset
-        </button>
       </form>
       <ul>
         {items.map((item) => (
           <>
-            <li>{item}</li>
-            <button type="click" onClick={handleRemove}>
-              Remove
+            <li index={id}>{item}</li>
+            <button
+              type="click"
+              onClick={() => {
+                handleRemove(id);
+              }}
+            >
+              REMOVE
             </button>
           </>
         ))}
       </ul>
+      <button type="click" onClick={handleReset}>
+        RESET
+      </button>
     </div>
   );
 }
 
-export default TodoList4;
+export default Todo5;

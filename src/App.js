@@ -20,11 +20,23 @@ import TodoList from "./ToDo";
 import TodoList2 from "./ToDo2";
 import TodoList3 from "./Todo3";
 import TodoList4 from "./ToDo4";
+import { Languagecontext } from "./Language/CreateContext";
+import { useState } from "react";
 
 function App() {
+  const [language, setLanguage] = useState("it");
+  function handlechange(event) {
+    setLanguage(event.target.value);
+  }
   return (
     <>
-      <TodoList4 />
+      <select onChange={handlechange} value={language}>
+        <option value={"it"}>it</option>
+        <option value={"en"}>en</option>
+      </select>
+      <Languagecontext.Provider value={language}>
+        <DisplayLanguage />
+      </Languagecontext.Provider>
     </>
   );
 }
