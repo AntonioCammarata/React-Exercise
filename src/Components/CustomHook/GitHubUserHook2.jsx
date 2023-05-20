@@ -1,26 +1,25 @@
-import React from "react";
-import useGitHubUser from "./GitHubUserHook";
+import { useGithubUser } from "./GitHubUserHook";
 
-const GitHubUserHook = ({ username }) => {
-  const { data, loading, error } = useGitHubUser({ username });
+function GithubUserHook(props) {
+  const { data, loading, error, onFetchUser } = useGithubUser(props.username);
 
-  if (loading) {
-    return "loading";
+  function userDataHandle() {
+    onFetchUser(props.username);
   }
-  if (error) {
-    return "error";
-  }
-  if (!data) {
-    return "no data found";
-  }
-  try {
-    return (
-      <div>
-        <h2>{data.name}</h2>
-      </div>
-    );
-  } catch (error) {
-    return "Error";
-  }
-};
-export default GitHubUserHook;
+
+  return (
+    <>
+      <button onClick={userDataHandle}>Carica</button>
+      {data && (
+        <div>
+          {loading && <h1>Loading...</h1>}
+          {error && <h1>Error</h1>}
+          <h1>{data.name}</h1>
+          <p>{data.login}</p>
+        </div>
+      )}
+    </>
+  );
+}
+
+export default GithubUserHook;
